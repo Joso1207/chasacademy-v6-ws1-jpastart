@@ -3,6 +3,7 @@ package se.chasacademy.databaser.jpastart.models;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -19,7 +20,7 @@ public class Student {
     private String email;
 
     @ManyToMany
-    Set<Course> Courses;
+    Set<Course> Courses = new HashSet<>();
 
     public Long getId() {
         return id;
