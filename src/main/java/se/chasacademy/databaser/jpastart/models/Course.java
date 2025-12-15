@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Course {
@@ -15,14 +16,17 @@ public class Course {
     private String title;
     @Column(nullable = false, unique = true, length = 5)
     private String courseCode;
+    @ManyToOne
+    private Teacher teacher;
 
     public Course() {
     }
 
-    public Course(long id, String title, String courseCode) {
+    public Course(long id, String title, String courseCode, Teacher teacher) {
         this.id = id;
         this.title = title;
         this.courseCode = courseCode;
+        this.teacher = teacher;
     }
 
     public long getId() {
@@ -47,5 +51,13 @@ public class Course {
 
     public void setCourseCode(String courseCode) {
         this.courseCode = courseCode;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 }
