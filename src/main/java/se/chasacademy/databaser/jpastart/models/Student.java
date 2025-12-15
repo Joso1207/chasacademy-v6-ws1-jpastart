@@ -53,4 +53,17 @@ public class Student {
                 ", email='" + email + '\'' +
                 '}';
     }
+
+    public Set<Course> getCourses() {
+        return Courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        Courses = courses;
+    }
+
+    public void addCourse(Course c){
+        getCourses().add(c);
+    }
+
 }
