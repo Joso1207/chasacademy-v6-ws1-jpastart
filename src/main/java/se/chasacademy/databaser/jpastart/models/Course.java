@@ -1,11 +1,9 @@
 package se.chasacademy.databaser.jpastart.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Course {
@@ -18,6 +16,8 @@ public class Course {
     private String courseCode;
     @ManyToOne
     private Teacher teacher;
+    @ManyToMany
+    private Set<Student> Students = new HashSet<>();
 
     public Course() {
     }
