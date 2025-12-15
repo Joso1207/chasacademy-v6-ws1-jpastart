@@ -19,7 +19,7 @@ public class Student {
     private String email;
 
     @ManyToMany
-    Set<Course> likedCourses;
+    Set<Course> Courses;
 
     public Long getId() {
         return id;
