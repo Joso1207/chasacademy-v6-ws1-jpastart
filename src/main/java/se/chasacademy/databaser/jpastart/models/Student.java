@@ -3,6 +3,8 @@ package se.chasacademy.databaser.jpastart.models;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 public class Student {
 
@@ -15,6 +17,9 @@ public class Student {
 
     @Column(nullable = false)
     private String email;
+
+    @ManyToMany
+    Set<Course> likedCourses;
 
     public Long getId() {
         return id;
